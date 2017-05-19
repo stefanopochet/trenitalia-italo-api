@@ -78,4 +78,4 @@ I wrote this API for my own needs, using https://www.apifier.com/ web crawler, a
 In the future I might develop a more structured service, with very fast responses (milliseconds instead of the currents 7-15 seconds) with support and quick updates to sudden Trenitalia/Italo website changes. Ideally I would charge some money from this service.
 Meanwhile you are free to use this Javascript API for any purpose, in any way you wish (commercial or non-commercial). 
 Be aware that I might drop support, limit usage or change the behaviour at anytime.
-If you are going to use the API, or if you have anyway any feedback, I will be happy if you drop me an email at stefanopochet@gmail.com to let me know how you are using this API. If you do so I will keep you updated about any future change to the API.
+If you are going to use the API, or if you have anyway any feedback, I will be happy if you drop me an email at stefanopochet@gmail.com. If you do so I will keep you updated about any future change to the API.
