@@ -333,10 +333,10 @@ var cta = {
 				if( request.status[i].apifierRunId !=null ){
 					data.push( 
 						{ 
-							"provider" : request.status[i].provider,
-							"apifierRunId" : request.status[i].apifierRunId,
-							"numberOfChecks" : request.status[i].checksCounter,
-							"results" : request.status[i].results
+							provider : request.status[i].provider,
+							apifierRunId : request.status[i].apifierRunId,
+							numberOfChecks : request.status[i].checksCounter,
+							results : request.status[i].results
 						} 
 					);
 				}
