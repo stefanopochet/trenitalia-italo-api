@@ -168,30 +168,30 @@ var cta = {
 			}
 		}
 		if( ! fromValid  ){
-			return { "requestResult" : "error", errorType : "From Station Input invalid for Italo request", "errorDescription" : "" };
+			return { requestResult : "error", errorType : "From Station Input invalid for Italo request", "errorDescription" : "" };
 		}
 		if( ! toValid  ){
-			return { "requestResult" : "error", errorType : "From Station Input invalid for Italo request", "errorDescription" : "" };
+			return { requestResult : "error", errorType : "From Station Input invalid for Italo request", "errorDescription" : "" };
 		}
 		var dateFormatReg = /^\d{2}([./-])\d{2}\1\d{4}$/;
 		if( ! departureDate.match( dateFormatReg ) ){
-			return { "requestResult" : "error", errorType : "Departure date format invalid" , "errorDescription" : "" };
+			return { requestResult : "error", errorType : "Departure date format invalid" , "errorDescription" : "" };
 		}
 		departureTime = parseInt(departureTime);
 		if( ! Number.isInteger(departureTime) || departureTime < 0 || departureTime > 24 ){
-			return { "requestResult" : "error", errorType : "Departure time format invalid" , "errorDescription" : "" };
+			return { requestResult : "error", errorType : "Departure time format invalid" , "errorDescription" : "" };
 		}
 		numberOfAdults = parseInt(numberOfAdults);
 		if( ! Number.isInteger(numberOfAdults) || numberOfAdults < 1 || numberOfAdults > 5 ){
-			return { "requestResult" : "error", errorType : "Number of adults format invalid" , "errorDescription" : "" };
+			return { requestResult : "error", errorType : "Number of adults format invalid" , "errorDescription" : "" };
 		}
 		numberOfKids = parseInt(numberOfKids);
 		if( ! Number.isInteger(numberOfKids) || numberOfKids < 0 || numberOfKids > 5 ){
-			return { "requestResult" : "error", errorType : "Number of kids format invalid" , "errorDescription" : "" };
+			return { requestResult : "error", errorType : "Number of kids format invalid" , "errorDescription" : "" };
 		}
 		var getType = {};
  		if( ! resultCallback || ! getType.toString.call(resultCallback) === '[object Function]' ){
- 			return { "requestResult" : "error", errorType : "Result Callback is not a function", "errorDescription" : "" };
+ 			return { requestResult : "error", errorType : "Result Callback is not a function", "errorDescription" : "" };
  		}
  		cta.log("Input validation OK");
 
