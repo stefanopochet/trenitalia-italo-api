@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<title>Trenitalia-Italo-API test consolle</title>
+		<style>
+			table, th, td {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>CercoTreno API JS Test Consolle V 0.3.1</h1>
+		<form id="cercotrenoApiForm">
+			Provider: <select name="provider"><option selected value="BOTH">BOTH</option><option value="TRENITALIA">TRENITALIA</option><option value="ITALO">ITALO</option></select> Select one of the providers <br>
+			From: <input type="text" name="from" value="Napoli Centrale"> (Enter Exact Station Name as displayed on Trenitalia website)<br>
+			To: <input type="text" name="to" value="Roma Termini"> (Enter Exact Station Name as displayed on Trenitalia website)<br>
+			Departure date: <input type="text" name="depart_date" value=""> (Format: dd-mm-yyyy example 15-05-2017)<br>
+			Departure Time: <input type="text" name="depart_time" value="12">(Format 0-24, leave blank to use current time)<br>
+			Number of Adults: <input type="text" name="num_adults" value="1">(Integer 1-5))<br>
+			Number of Kids: <input type="text" name="num_kids" value="0">(Integer 0-5)<br>
+			<input type="submit" value="Run">
+		</form>
+		<br><br>
+		<div id="cercotrenoResult"></div>
+
+		<br><br>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="js/cta.js"></script>
+
+<script>
+// auto fill in data with now data and auto submit form
+$( "#cercotrenoApiForm" ).ready( function() {
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1;
+	var yyyy = today.getFullYear();
+	var hours = today.getHours();
+	if(dd<10) {
+	    dd='0'+dd;
+	} 
+	if(mm<10) {
+	    mm='0'+mm;
+	} 
+	$("form#cercotrenoApiForm [name='depart_date']").val( dd + "-" + mm + "-" + yyyy );
+	$("form#cercotrenoApiForm [name='depart_time']").val( hours );
+	if( getParameterByName('noauto') != 1 ){
+		cercotrenoApiSubmit();
+	}
+
+});
+
+// submit form handler
+$('#cercotrenoApiForm').submit(function() {
+	event.preventDefault();
+	cercotrenoApiSubmit();
+});
+// submit function
+function cercotrenoApiSubmit(){
+	// Train Info Request
+	function resultFunction( result ){
+		clearInterval(intervalId);
+		$("form#cercotrenoApiForm [type='submit']").attr("disabled",false);
+		console.log("Result returned", result);
+		var resultsHtml = "<h2>Results</h2><table><tr><td>Provider</td><td>From</td><td>To</td><td>Start</td><td>Finish</td><td>Length</td><td>Starting price</td><td>Offer</td><td>Train Type</td></tr><tr>";
+		$.each( result.data, function( i, providerResults ){
+			console.log( providerResults );
+			$.each( providerResults.results, function( j, result ){
+				resultsHtml += "<td>" + providerResults.provider + "</td>";
+				resultsHtml += "<td>" + result.stationStart + "</td>";
+				resultsHtml += "<td>" + result.stationFinish + "</td>";
+				resultsHtml += "<td>" + result.start + "</td>";
+				resultsHtml += "<td>" + result.finish + "</td>";
+				resultsHtml += "<td>" + result.length + "</td>";
+				resultsHtml += "<td>" + result.startingPrice + "</td>";
+				resultsHtml += "<td>" + result.trainType + "</td>";
+				resultsHtml += "<td>" + result.offer + "</td>";
+				resultsHtml += "</tr><tr>";
+			});
+		});
+		resultsHtml += "</tr></table>";
+		$("#cercotrenoResult").html( resultsHtml );
+	}
+	var requestResult = cta.requestTrainInfo( $("form#cercotrenoApiForm [name='provider']").val(), $("form#cercotrenoApiForm [name='from']").val(), $("form#cercotrenoApiForm [name='to']").val(), $("form#cercotrenoApiForm [name='depart_date']").val(), $("form#cercotrenoApiForm [name='depart_time']").val(), $("form#cercotrenoApiForm [name='num_adults']").val(), $("form#cercotrenoApiForm [name='num_kids']").val(), 	resultFunction, { writeLogs : true } );
+	if( requestResult.requestResult == "OK" ){
+		$("#cercotrenoResult").html( "Request sent OK, please wait ... <span id='secondsCounter'>0</span> <br>(It usually takes 8 seconds for Italo and 14 seconds for Trenitalia/Both)" );
+		var intervalId = window.setInterval( function(){
+			$("#secondsCounter").html( parseInt($("#secondsCounter").html()) + 1 );
+		}, 1000 );
+		$("form#cercotrenoApiForm [type='submit']").attr("disabled","disabled");
+	} else {
+		$("#cercotrenoResult").html( "Request error, probably input is invalid" );
+	}
+}
+</script>
+
+</body>
+</html>
