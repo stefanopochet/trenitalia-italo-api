@@ -43,9 +43,6 @@ $( "#cercotrenoApiForm" ).ready( function() {
 	} 
 	$("form#cercotrenoApiForm [name='depart_date']").val( dd + "-" + mm + "-" + yyyy );
 	$("form#cercotrenoApiForm [name='depart_time']").val( hours );
-	if( getParameterByName('noauto') != 1 ){
-		cercotrenoApiSubmit();
-	}
 
 });
 
