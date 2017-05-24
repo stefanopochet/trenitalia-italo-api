@@ -4,7 +4,7 @@ This is an unofficial Javascript API for Trenitalia and Italo (the two major ita
 
 Given the required search parameters the API will search on Trenitalia and/or Italo website for train tickets and return available trains with given time/fare/train type and more.
 
-This API is actually a web crwaler of Italo and Trenitalia, so response it's pretty slow (It usually takes 8 seconds for Italo and 14 seconds for Trenitalia/Both). However in the future I might develop a faster and more reliable service (please see License and Limits).
+Behind the scene this API actually uses a remote web crawler of Italo and Trenitalia websites. Response it's pretty slow (It usually takes 8 seconds for Italo and 14 seconds for Trenitalia/Both). However in the future I might develop a faster and more reliable service (please see License and Limits).
 
 # Example HTML Implementation
 Please check the following URL for a working HTML implementation of this API:
