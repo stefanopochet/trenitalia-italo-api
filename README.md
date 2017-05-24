@@ -50,19 +50,19 @@ Following is an explanation of the meaning and the format of the cta.requestTrai
 The provider to search for train tickets, if BOTH the API will search on both providers. One of "ITALO", "TRENITALIA" and "BOTH". 
 ##### from 
 A valid station start as displayed on Trenitalia website. Please see Trenitalia public website or https://cdn.rawgit.com/stefanopochet/trenitalia-italo-api/55e5821b/trenitalia_train_stations.json for a valid list of stations. For ITALO and BOTH providers please still use the station name in the Trenitalia format (e.g "Milano Rog" becomes "Milano Rogoredo" and "Roma (Tutte)" become "Roma ( Tutte Le Stazioni )" )
-#### to 
+##### to 
 A valid station start as displayed on Trenitalia website. Please see Trenitalia public website or https://cdn.rawgit.com/stefanopochet/trenitalia-italo-api/55e5821b/trenitalia_train_stations.json for a valid list of stations. For ITALO and BOTH providers please still use the station name in the Trenitalia format (e.g "Milano Rog" becomes "Milano Rogoredo" and "Roma (Tutte)" become "Roma ( Tutte Le Stazioni )" ).
-#### departureDate
+##### departureDate
 Departure date in dd-mm-yyyy format. E.g. "15-07-2017" will be July 15th, 2017.
-#### departureTime 
+##### departureTime 
 Departure time as an Integer number 0-24. E.g. "4" is 4 AM, "17" will be 5 PM. 
-#### numberOfAdults 
+##### numberOfAdults 
 Number of adults as an Integer number 1-5
-#### numberOfKids 
+##### numberOfKids 
 Number of kids as an Integer number 0-5
-#### resultCallback(resultData) 
+##### resultCallback(resultData) 
 A callback function that will be called at the end of the crawling execution. The resultCallback function will send result data as a single parameter. See next paragraph for results data format.
-#### settings
+##### settings
 A setting json object with a writeLogs parameter. E.g. { writeLogs : true }. If the writeLog parameter is true logs about the execution will be printed out on the Javascript consolle.
 
 ## Result Data format
