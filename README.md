@@ -69,6 +69,7 @@ A setting json object with a writeLogs parameter. E.g. { writeLogs : true }. If 
 ## Result Data format
 Result Data object sent to resultCallback will have the following format:
 ```
+{
   result : string, data : [{ // an array with the results from each provider, e.g. "success"
   provider : string // the provider for which results are returned
   apifierRunId : string // crawler unique run identifier
@@ -83,7 +84,7 @@ Result Data object sent to resultCallback will have the following format:
     stationFinish : string, // arrival station
     stationStart : string, // starting station
     trainType : string // train number, available only for Trenitalia  
-}]
+}]}
 ```
 
 # Licence and Limits
