@@ -38,8 +38,7 @@ The cta.requestTrainInfo method will return a requestResult object, if all the r
 Example successfull response:
 ``` 
 {
-  "requestResult" : "OK/Error",
-  "errorType" : "Description of the error"
+  "requestResult" : "OK"
 }
 ```
 
