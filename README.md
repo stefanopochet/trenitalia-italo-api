@@ -2,7 +2,7 @@
 
 This is an unofficial Javascript API for Trenitalia and Italo (the two major italian railways company) train tickets search.
 
-Given the required search parameters the API will search on Trenitalia and/or Italo website for train tickets and returns available trains with given time/fare/train type and more.
+Given the required search parameters the API will search on Trenitalia and/or Italo website for train tickets and return available trains with given time/fare/train type and more.
 
 This API is actually a web crwaler of Italo and Trenitalia, so response it's pretty slow (It usually takes 8 seconds for Italo and 14 seconds for Trenitalia/Both). However in the future I might develop a faster and more reliable service (please see License and Limits).
 
@@ -18,7 +18,7 @@ This API is based on jQuery (tested with version 3.2.1), so make sure to include
 # Installation
 Include the js/cta.js javascript file:
 ```
-<script src="https://cdn.rawgit.com/stefanopochet/trenitalia-italo-api/fa4bde76/js/cta.js"></script>
+<script src="https://cdn.rawgit.com/stefanopochet/trenitalia-italo-api/a2bdddc0e5edd0fb32fb9c78f323ab7c31f46f32/js/cta.js"></script>
 ```
 
 # Usage
@@ -26,7 +26,7 @@ Now simply use the cta.requestTrainInfo method to make a train info request.
 ```
 cta.requestTrainInfo( provider, from, to, departureDate, departureTime, numberOfAdults, numberOfKids, resultCallback, settings );
 ```
-Example: 
+### Example: 
 ```
 cta.requestTrainInfo( "BOTH", "Napoli Centrale", "Roma Termini", "19-05-2017", 15, 1, 0, function( results ){console.log(results)
 }, {writeLogs : true } );
