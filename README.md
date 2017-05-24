@@ -8,7 +8,7 @@ This API is actually a web crwaler of Italo and Trenitalia, so response it's pre
 
 # Example HTML Implementation
 Please check the following URL for a working HTML implementation of this API:
-https://cdn.rawgit.com/stefanopochet/trenitalia-italo-api/fa4bde76/usage_example.html
+https://cdn.rawgit.com/stefanopochet/trenitalia-italo-api/a2bdddc0e5edd0fb32fb9c78f323ab7c31f46f32/usage_example.html
 
 # Requirements
 This API is based on jQuery (tested with version 3.2.1), so make sure to include jQuery in your page before including the Trenitalia-Italo-API.
