@@ -45,8 +45,8 @@ Example successfull response:
 
 ### Parameters
 Following is an explanation of the meaning and the format of the cta.requestTrainInfo method parameters
-```
-provider
+
+#### provider
 The provider to search for train tickets, if BOTH the API will search on both providers. One of "ITALO", "TRENITALIA" and "BOTH". 
 from 
 A valid station start as displayed on Trenitalia website. Please see Trenitalia public website or https://cdn.rawgit.com/stefanopochet/trenitalia-italo-api/55e5821b/trenitalia_train_stations.json for a valid list of stations. For ITALO and BOTH providers please still use the station name in the Trenitalia format (e.g "Milano Rog" becomes "Milano Rogoredo" and "Roma (Tutte)" become "Roma ( Tutte Le Stazioni )" )
@@ -64,7 +64,7 @@ resultCallback(resultData)
 A callback function that will be called at the end of the crawling execution. The resultCallback function will send result data as a single parameter. See next paragraph for results data format.
 settings
 A setting json object with a writeLogs parameter. E.g. { writeLogs : true }. If the writeLog parameter is true logs about the execution will be printed out on the Javascript consolle.
-```
+
 
 ## Result Data format
 Result Data object sent to resultCallback will have the following format:
