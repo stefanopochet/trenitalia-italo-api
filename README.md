@@ -48,7 +48,7 @@ Following is an explanation of the meaning and the format of the cta.requestTrai
 
 #### provider
 The provider to search for train tickets, if BOTH the API will search on both providers. One of "ITALO", "TRENITALIA" and "BOTH". 
-#### from 
+##### from 
 A valid station start as displayed on Trenitalia website. Please see Trenitalia public website or https://cdn.rawgit.com/stefanopochet/trenitalia-italo-api/55e5821b/trenitalia_train_stations.json for a valid list of stations. For ITALO and BOTH providers please still use the station name in the Trenitalia format (e.g "Milano Rog" becomes "Milano Rogoredo" and "Roma (Tutte)" become "Roma ( Tutte Le Stazioni )" )
 #### to 
 A valid station start as displayed on Trenitalia website. Please see Trenitalia public website or https://cdn.rawgit.com/stefanopochet/trenitalia-italo-api/55e5821b/trenitalia_train_stations.json for a valid list of stations. For ITALO and BOTH providers please still use the station name in the Trenitalia format (e.g "Milano Rog" becomes "Milano Rogoredo" and "Roma (Tutte)" become "Roma ( Tutte Le Stazioni )" ).
