@@ -397,7 +397,7 @@ var cta = {
 						// for Trenitalia results are in pageResults with given label "results"
 						if( status.provider == "ITALO" || status.provider == "TRENITALIA" && urlElement.label == "results" ){
 							// for Italo I have to add a dummy trainType and offer and have to translate stations
-							if( status.provider == "ITALO" || status.provider == "TRENITALIA" && urlElement.label == "results" ){
+							if( status.provider == "ITALO" && urlElement.label == "results" ){
 								for( j in urlElement.pageFunctionResult ){
 									urlElement.pageFunctionResult[j].offer = null;
 									urlElement.pageFunctionResult[j].trainType = null;
